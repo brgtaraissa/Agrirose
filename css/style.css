@@ -1,0 +1,28 @@
+.warna1 {
+    background-color: #590d22;
+}
+
+.warna2 {
+    background-color: #a4133c;
+}
+
+.warna3 {
+    background-color: #e17a86;
+}
+
+.warna4 {
+    background-color: #efa6af;
+}
+
+.warna5 {
+    background-color: #f7bfd0;
+}
+
+.warna6 {
+    background-color: #fff;
+}
+
+.banner {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/image/CXMwbXxTWR6jzsZpjEf4.png');
+}

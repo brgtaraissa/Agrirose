@@ -1,0 +1,3092 @@
+@import "variables";
+* {
+    padding: 0;
+    margin: 0; 
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'karla', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+    color: $third-color !important;
+    &:hover {
+    color: $primary_color !important;
+    }
+}
+
+li{
+    list-style: none;
+}
+
+header {
+    height: 100%;
+    width: 100%;
+}
+
+//nav
+nav {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06);
+    margin-bottom: 5px;
+    text-decoration: none;
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 40%;
+        // justify-content: space-evenly;
+
+        .name {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        gap: 70px;
+        width: 100%;
+        transform: translateY(-100%);
+        text-align: center;
+        color: $sixth_color;
+        background-color: $sixth_color;
+        transition: all 0.3s;
+        z-index: 2;
+        text-decoration: none;
+        a:hover {
+            color: $third-color;
+        }
+    }
+
+    .nav-links.show {
+        top: 70px;
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .no-decoration{
+        text-decoration: none;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        margin-left: auto;
+        z-index: 2;
+
+        .line{
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: $primary_color;
+            border-radius: 3px;
+        }
+    }
+}
+//nav
+
+//cart
+.cart-icon {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+
+    img {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+//hero
+.hero {
+    img {
+        width: 100%;
+    }
+      
+    .fade {
+        animation-name: fade;
+        animation-duration: 4s;
+    }
+      
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    
+    .box-container {
+        background-color: $primary_color;
+        width: 100%;
+        height: 300px;
+        color: $second_color;
+        text-align: center;
+        
+        h1 {
+            padding: 30px;
+            font-size: 25px;
+        }
+        p {
+            font-size: 14px;
+            padding: 0px 20px;
+        }
+    }
+}
+//hero
+
+// Preview 
+#product-categories {
+    .container {
+        .row {
+            &.text-center {
+                margin-top: 5rem;
+                margin-bottom: 5rem;
+
+                .section-title {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .category-box {
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 30px;
+
+            .image-container {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5); // Semi-transparent black overlay
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+
+                    .text {
+                        color: white;
+                        font-size: 20px;
+                        font-weight: bold;
+                        text-align: center;
+                        padding: 10px;
+                    }
+                }
+
+                &:hover .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+//preview
+
+//about
+.agrirose {
+    .about-agrirose {
+        text-align: justify;
+        padding: 20px 20px;
+        h1 {
+            font-size: 25px;
+            color: $primary_color;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            padding: 14px;
+            color: $fourth-color;
+        }
+
+        .button {
+            border: 2px solid black;
+            border-color: $primary_color;
+            background-color: $second_color;
+            padding: 15px 15px;
+            width: 180px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 15px;
+
+            //coklat 
+            h4 {
+                color: $primary_color;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .video-container {
+        flex:1 1 40rem;
+        position: relative;
+
+        video{
+            width:100%;
+            border:1.5rem solid #fff;
+            border-radius: .5rem;
+            // box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.value {
+    .box-container {
+        background-color: #F1B4BB;
+        height: 500px;
+        border-radius: 20px;
+        width: 460px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .icon-pelayanan-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .premium-flower, .instan-order, .pengiriman {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 20px;
+
+                img {
+                    width: 120px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    color: $second_color;
+                    margin-top: 20px;
+                }
+
+                p {
+                    font-size: 12px;
+                    color: $second_color;
+                    width: 250px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+//about
+
+//activity 
+.activity {
+    margin-top: 50px;
+    .pelayanan {
+        .box-container {
+            background-color: #F2EAD3;
+            width: 100%;
+            height: 600px;
+            // margin-left: 0%;
+            // border-radius: 20px;
+
+            h1 {
+                padding: 20px 20px;
+                text-align: center;
+                font-size: 25px;
+                color: $primary-color;
+            }
+
+            .icon-pelayanan-1 {
+                display: flex;
+                flex-direction: row;
+                .konsultasi {
+                    padding: 10% 3%;
+                    img {
+                        margin-left: 40px;
+                        width: 120px;
+                    }
+
+                    h4 {
+                        font-size: 20px;
+                        color: $primary-color;
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-align: center;
+                        color: $primary-color;
+                        width: 210px;
+                    }
+                }
+
+                .bunga-potong {
+                    padding: 10% 0%;
+                    img {
+                        margin-left: 40px;
+                        width: 120px;
+                    }
+
+                    h4 {
+                        font-size: 20px;
+                        color: $primary-color;
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-align: center;
+                        color: $primary-color;
+                        width: 200px;
+                    }
+                }
+            }
+
+            .icon-pelayanan-2 {
+                display: flex;
+                flex-direction: row;
+                .rangkaian-bunga {
+                    padding: 0px 20px;
+                    img {
+                        margin-left: 40px;
+                        width: 120px;
+                    }
+
+                    h4 {
+                        font-size: 20px;
+                        color: $primary-color;
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-align: center;
+                        color: $primary-color;
+                        width: 200px;
+                    }
+                }
+
+                .distribusi {
+                    padding: 0px px;
+                    img {
+                        margin-left: 40px;
+                        width: 120px;
+                    }
+
+                    h4 {
+                        font-size: 20px;
+                        color: $primary-color;
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-align: center;
+                        color: $primary-color;
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+
+    .kegiatan {
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 25px;
+            color: $primary_color;
+            padding:20px 0px;
+        }
+
+        p {
+            text-align: justify;
+            padding: 10px 10px;
+            font-size: 14px;
+        }
+
+        .container {
+            margin-top: 50px;
+            width: 500px;
+            // height: 800px;
+            display: flex;
+            flex-direction: row;
+            padding: 0 20px;
+        }
+          
+        .slide {
+            height: 50vh;
+            width: 300px;
+            border-radius: 20px;
+            margin: 10px;
+            cursor: pointer;
+            color: #fff;
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            transition: all 0.7s ease-in-out;
+            // filter: blur(4px);
+        }
+          
+        .slide h3 {
+            position: absolute;
+            font-size: clamp(1rem, 5vw, 5rem);
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+            background-color: #e3fdf5;
+            background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+          
+        .slide.active {
+            flex: 10;
+            // filter: blur(0px);
+        }
+    }
+}
+//activity
+
+//social impact 
+.social-impact {
+    .permasalahan {
+        img {
+           width: 100%; 
+           margin-top: -20vw;
+           padding: 20px;
+           border-radius: 30px;
+        }
+
+        .box-container {
+            text-align: center;
+            background-color: $primary_color;
+            margin-top:15vw;
+            padding: 20px 20px;
+            width: 100%;
+            height: 400px;
+
+            h1 {
+                color:#DADDB1;
+                font-size: 25px;
+            }
+
+            p {
+                padding: 20px;
+                color: $third-color;
+            }
+
+            button {
+                padding: 15px;
+                border-radius: 15px;
+                background-color: transparent;
+                color: #DADDB1;
+                font-weight: 700;
+                border-color: #DADDB1;
+                cursor: pointer;
+            }
+        }
+    }
+}
+//social impact
+
+//footer
+.footer .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer .logo .name img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.footer .box-container {
+    text-align: center;
+    padding: 20px;
+    background-color: $third-color; /* Adjust background color as needed */
+}
+
+.footer p, .footer .contact, .footer .location, .footer .copyright {
+    margin: 10px 0;
+}
+
+.footer .contact a {
+    margin: 0 10px;
+}
+
+.footer .contact img {
+    width: 30px; /* Adjust icon size as needed */
+    height: 30px;
+    object-fit: cover;
+}
+
+
+//about section starts here
+    //about agrirose
+    .tentang-agrirose {
+        .apa-itu-agrirose {
+            text-align: justify;
+            h1 {
+                font-size: 25px;
+                color: $primary_color;
+                padding: 20px;
+            }
+
+            p {
+                text-indent: 20px;
+                font-size: 14px;
+                padding: 0px 20px;
+                color: $fourth-color;
+            }
+        }
+
+        .foto-about-agrirose {
+            img {
+                width: 500px;
+                padding: 15px 15px;
+                border-radius: 20px
+            }
+        }
+    }
+    //about agrirose
+
+    //about gunungsari
+    .about-gunung-sari {
+        .gunung-sari {
+            .box-container {
+                margin: 20px 25px;
+                width: 450px;
+                height: 500px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 450px;
+                    height: 270px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 50vw;
+                    margin-top: 15px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .farmer {
+            .box-container {
+                margin: 20px 25px;
+                width: 450px;
+                height: 500px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 450px;
+                    height: 270px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 50vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .price {
+            .box-container {
+                margin: 20px 25px;
+                width: 450px;
+                height: 500px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 450px;
+                    height: 270px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 50vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    //about gunungsari
+//about section ends here
+
+//social impact section starts here
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.impact .apa-yang-terjadi,
+.impact .pemberdayaan {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.impact img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.box-container {
+    width: 100%;
+    text-align: center;
+}
+
+.box-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.box-container p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.mengapa-agrirose h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mengapa-agrirose p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.number {
+    width: 100%;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.number-title {
+    font-size: 2.5em;
+    color: #a4133a;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.number-heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.number p {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+//social impact section ends here
+
+//wa me
+.wa-me {
+    .wa_btn {
+        position: fixed;
+        right: 30px;
+        bottom: 50px;
+        text-decoration: none;
+        color: $second-color;
+        background-color: rgba(35, 243, 16);
+        padding: 10px 20px;
+        border-radius: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            font-size: 60px;
+            padding: 10px 10px;
+            background-color: rgba(35, 243, 16);
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 110px;
+            color: $second-color;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+//wa me
+
+@media screen and (min-width: 576px) {
+    //hero
+    .hero {
+        .box-container {
+            height: 400px;
+        }
+    }
+    //hero
+
+    //cart
+    .cart-icon {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        cursor: pointer;
+        z-index: 10; /* Ensure it's above other elements */
+    
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }    
+
+    //value
+    .value {
+        .box-container {
+            width: 350px;
+            height: 450px;
+            align-items: center;
+            .icon-pelayanan-3 {
+                .premium-flower {
+                    img {
+                        width: 70px;
+                        margin-top: 15px;
+                    }
+
+                    h4 {
+                        margin-top: 5px;
+                    }
+
+                    p {
+                        margin-top: 35px;
+                        margin-left: 25vw;
+                        width: 200px;
+                    }
+                }
+
+                .instan-order {
+                    img {
+                        width: 70px;
+                        margin-top: 15px;
+                    }
+
+                    h4 {
+                        margin-top: 5px;
+                        margin-left:10px;
+                        width: 200px;
+                    }
+
+                    p {
+                        margin-top: 60px;
+                        margin-left: 30vw;
+                        width: 200px;
+                    }
+                }
+
+                .pengiriman {
+                    img {
+                        width: 70px;
+                        margin-top: 30px;
+                    }
+
+                    h4 {
+                        margin-top: 5px;
+                        margin-left:10px;
+                    }
+
+                    p {
+                        margin-top: 60px;
+                        margin-left: 30vw;
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+    //value
+
+    //activity 
+    .activity {
+        .pelayanan {
+            .box-container {
+                height: 500px;
+                .icon-pelayanan-1 {
+                    .konsultasi {
+                        img {
+                            width: 100px;
+                            margin-left: 50px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            margin-left: 26px;
+                        }
+
+                        p {
+                            font-size: 10px;
+                            margin-left: 20px;
+                            width: 150px;
+                        }
+                    }
+
+                    .bunga-potong {
+                        img {
+                            width: 100px;
+                            margin-left: 50px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            margin-left: 26px;
+                        }
+
+                        p {
+                            font-size: 10px;
+                            margin-left: 20px;
+                            width: 150px;
+                        }
+                    }
+                }
+
+                .icon-pelayanan-2 {
+                    .rangkaian-bunga{
+                        img {
+                            width: 100px;
+                            margin-left: 50px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            margin-left: 26px;
+                        }
+
+                        p {
+                            font-size: 10px;
+                            margin-left: 20px;
+                            width: 150px;
+                        }
+                    }
+
+                    .distribusi {
+                        img {
+                            width: 100px;
+                            margin-left: 35px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            margin-left: 20px;
+                        }
+
+                        p {
+                            font-size: 10px;
+                            margin-left: 15px;
+                            width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .kegiatan {
+            .slide {
+                margin: 5px;
+
+            }
+        }
+    }
+    //activity
+
+    //about
+    .tentang-agrirose {
+        .foto-about-agrirose {
+            img {
+                width: 390px;
+            }
+        }
+    }
+    //about
+
+    //about gunung sari
+    .about-gunung-sari {
+        .gunung-sari {
+            .box-container {
+                width: 340px;
+                height: 450px;
+
+                img {
+                    width: 340px;
+                    height: 200px;
+                }
+
+                .button {
+                    margin-left: 40vw;
+                }
+            }
+        }
+    }
+    //about gunung sari
+}
+
+
+@media screen and (min-width: 768px) {
+    //nav
+    nav{
+        .logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 40%;
+            // justify-content: space-evenly;
+    
+            .name {
+    
+                img {
+                    width: 25%;
+                }
+            }
+        }
+        .nav-links{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            transform: none;
+            transition: none;
+            justify-content: center;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .burger{
+            display: none;
+        }
+    }
+    //nav
+
+    //hero
+    .hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            &.active {
+                opacity: 1;
+            }
+        }
+    
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: $sixth_color;
+    
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+    
+            .btn-discover {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: $sixth_color;
+                color: $sixth_color;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+    
+                &:hover {
+                    background-color: $third-color;
+                }
+            }
+        }
+    }
+    //hero
+
+    //cart
+    .cart-icon {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        cursor: pointer;
+        z-index: 10; /* Ensure it's above other elements */
+    
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    //about
+    .agrirose {
+        display: flex;
+        .about-agrirose {
+            text-align: justify;
+            padding: 20px 20px;
+            h1 {
+                font-size: 28px;
+                color: $third-color;
+                padding: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                padding: 14px;
+                color: $fifth_color;
+                width: 400px;
+            }
+
+            .button {
+                border: 2px solid black;
+                border-color: $fifth_color;
+                background-color: $second_color;
+                padding: 15px 15px;
+                width: 190px;
+                border-radius: 20px;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-top: 15px;
+
+                //coklat 
+                h4 {
+                    color: $third-color;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .video-container {
+        flex:1 1 40rem;
+        position: relative;
+
+        video{
+            width:100%;
+            border:1.5rem solid #fff;
+            border-radius: .5rem;
+            // box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            height: 100%;
+            object-fit: cover;
+        }
+    }  
+
+    .value {
+        background-color: $third-color;
+        padding: 80px 0;
+    }
+    
+    .value-box {
+        text-align: center;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .value-box:hover {
+        transform: translateY(-5px);
+    }
+    
+    .value-icon {
+        margin-bottom: 20px;
+    }
+    
+    .value-icon img {
+        max-width: 100px;
+    }
+    
+    .value-box h4 {
+        font-size: 22px;
+        font-weight: 600;
+        color: $third-color;
+        margin-bottom: 15px;
+    }
+    
+    .value-box p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: $third-color;
+    }
+    //about
+
+    //jenis product
+    .product-categories .category-box {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .product-categories .image-container {
+        position: relative;
+    }
+
+    .product-categories .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-categories .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Overlay color */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .product-categories .category-box:hover .overlay {
+        opacity: 1;
+    }
+
+    .product-categories .overlay .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    //jenis product
+
+    //pemberdayaan
+    .carousel-section {
+        margin-top: 50px;
+        background-color: $sixth_color;
+        padding: 20px 0;
+    
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+    
+            .carousel {
+                border-radius: 25px;
+                overflow: hidden;
+    
+                .carousel-inner {
+                    border-radius: 25px;
+    
+                    .carousel-item img {
+                        width: 100%;
+                        border-radius: 25px;
+                        filter: brightness(80%);
+                        transition: filter 0.3s ease;
+    
+                        &:hover {
+                            filter: brightness(100%);
+                        }
+                    }
+                }
+    
+                .carousel-control-prev, .carousel-control-next {
+                    width: 5%;
+                    background: transparent;
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+    
+
+    //combined section
+    #combined {
+    padding: 50px 0;
+    background-color: #fff;
+
+    .section-box {
+        background-color: $primary_color;
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s;
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: $sixth_color;
+        }
+
+        p {
+            color: $sixth_color;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+    //combined section
+
+    //activity 
+    .activity {
+        .pelayanan {
+            .box-container {
+                background-color: #F2EAD3;
+                height: 400px;
+
+                h1 {
+                    padding: 40px 0px 0px 0px;
+                    text-align: center;
+                    font-size: 28px;
+                    color: $primary_color;
+                }
+
+                .icon-pelayanan-1 {
+                    padding: 0% 0%;
+                    display: flex;
+                    flex-direction: row;
+                    .konsultasi {
+                        img {
+                            margin-left: 65px;
+                            width: 80px;
+                            padding-bottom: 10px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            color: $second_color;
+                            text-align: center;
+                            padding-right: 38px;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            text-align: center;
+                            color: $second_color;
+                            padding-right: 38px;
+                            width: 210px;
+                        }
+                    }
+
+                    .bunga-potong {
+                        padding: 10% 0%;
+                        img {
+                            margin-left: 40px;
+                            width: 80px;
+                            padding-bottom: 10px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            color: $primary-color;
+                            text-align: center;
+                            padding-right: 18px;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            text-align: center;
+                            color: $primary-color;
+                            padding-right: 18px;
+                            width: 150px;
+                        }
+                    }
+                }
+
+                .icon-pelayanan-2 {
+                    display: flex;
+                    flex-direction: row;
+                    .rangkaian-bunga {
+                        position: relative;
+                        margin-top: -28%;
+                        margin-left: 52%;
+                        img {
+                            margin-left: 10px;
+                            margin-bottom: 10px;
+                            width: 80px;
+                        }
+    
+                        h4 {
+                            font-size: 15px;
+                            color: $primary-color;
+                            text-align: center;
+                            margin-left: 10px;
+                        }
+    
+                        p {
+                            font-size: 12px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 150px;
+                        }
+                    }
+    
+                    .distribusi {
+                        position: relative;
+                        margin-top: -27%;
+                        margin-left: 5%;
+                        img {
+                            margin-left: 40px;
+                            width: 80px;
+                            margin-top: -3px;
+                        }
+    
+                        h4 {
+                            font-size: 15px;
+                            color: $primary-color;
+                            text-align: center;
+                        }
+    
+                        p {
+                            font-size: 12px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 150px;
+                        }
+                    }
+                }                
+            }
+        }
+
+        .kegiatan {
+            display: flex;
+            h1 {
+                position: absolute;
+                margin: 5% 15%;
+                font-size: 28px;
+            }
+
+            p {
+                margin: 15% 5%;
+
+            }
+
+            .slide {
+                height: 55vh;
+                width: 300px;
+                border-radius: 20px;
+                margin: 10px;
+                cursor: pointer;
+                color: #fff;
+                flex: 1;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                transition: all 0.7s ease-in-out;
+                // filter: blur(4px);
+            }
+            
+            .slide h3 {
+                position: absolute;
+                font-size: clamp(1rem, 5vw, 5rem);
+                bottom: 20px;
+                left: 20px;
+                margin: 0;
+                opacity: 0;
+                background-color: #e3fdf5;
+                background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .slide.active {
+                flex: 10;
+                // filter: blur(0px);
+            }
+        }
+    }
+    //activity
+
+    //social impact 
+    .social-impact {
+        .permasalahan {
+            display: flex;
+            flex-direction: column-reverse;
+
+            img {
+            width: 80%; 
+            margin-top: -8vw;
+            padding: 20px;
+            border-radius: 30px;
+            }
+
+            .box-container {
+                text-align: center;
+                background-color: $primary_color;
+                margin-top: -48vw;
+                margin-left: 35vw;
+                padding: 20px 20px;
+                width: 60%;
+                height: 320px;
+
+                h1 {
+                    color:#DADDB1;
+                    font-size: 25px;
+                }
+
+                p {
+                    padding: 20px;
+                    color: $second_color;
+                }
+
+                button {
+                    padding: 15px;
+                    border-radius: 15px;
+                    background-color: transparent;
+                    color: #DADDB1;
+                    font-weight: 700;
+                    border-color: #DADDB1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    //social impact
+
+    //product
+    .product {
+        .our-product {
+          text-align: left;
+      
+          .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-right: 140px;
+      
+            h1 {
+              font-size: 2rem;
+              font-weight: 700;
+            }
+      
+            a {
+              text-decoration: none;
+              font-size: 1rem;
+              color: #ff6347;
+              border-bottom: 2px solid transparent;
+              transition: border-bottom 0.3s;
+      
+              &:hover {
+                border-bottom: 2px solid #ff6347;
+              }
+            }
+          }
+      
+          p {
+            font-size: 1.2rem;
+            color: #666;
+          }
+        }
+      
+        .wrapper {
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+
+      
+          .carousel {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+      
+            .product-box {
+              flex: 0 0 auto;
+              width: 200px;
+              height: 250px;
+              margin: 0 10px;
+              overflow: hidden;
+              border-radius: 15px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s;
+      
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+      
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    //product
+
+    //education
+    .section-title {
+        color: #a4133a;
+    }
+    .section-box {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+    .section-box img {
+        border-radius: 10px;
+        margin-bottom: 15px;
+        max-width: 100%;
+        height: auto;
+    }
+    .section-box h3 {
+        color: #a4133a;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .section-box p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .section-box:hover {
+        transform: translateY(-10px);
+    }
+    // education
+    
+    //poster
+    .poster-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+    
+    .poster-box {
+        position: relative;
+        cursor: pointer;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .poster-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .poster-image {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .poster-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 15px;
+    }
+    
+    .poster-box:hover .poster-image {
+        transform: scale(1.05);
+    }
+    
+    .poster-box:hover .poster-overlay {
+        opacity: 1;
+    }         
+    //poster
+
+    //formulir
+    h2.section-title {
+        color: #a4133a;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    .visit-form {
+        padding: 60px 0;
+        background: #fff;
+    }
+    
+    .ornament-slider .thumbnail {
+        overflow: hidden;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .ornament-slider .thumbnail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .ornament-slider img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+    }
+    
+    form .form-control {
+        border-radius: 10px;
+    }
+    
+    form .btn-primary {
+        background-color: #a4133a;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+    }
+    
+    form .btn-primary:hover {
+        background-color: #890f2e;
+    }
+    //formulir
+
+    //review
+    .reviews {
+        background-color: $third-color;
+        padding: 80px 0;
+    }
+    
+    .review-box {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .review-box .review-content {
+        flex: 1;
+    }
+    
+    .review-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .review-box p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    
+    #reviewForm .form-control {
+        margin-bottom: 15px;
+    }
+    
+    .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: center;
+    }
+    
+    .rating > input {
+        display: none;
+    }
+    
+    .rating > label {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+    .rating > label:before {
+        content: "\2605";
+        font-size: 1.5rem;
+    }
+    
+    .rating > input:checked ~ label:before {
+        content: "\2605";
+        color: #f8ce0b;
+    }
+    
+    .rating > input:not(:checked) ~ label:before {
+        content: "\2605";
+        color: #ddd;
+    }
+    
+    .rating > input:checked + label:hover:before,
+    .rating > input:checked + label:hover ~ label:before {
+        color: #f8ce0b;
+    }
+
+    .star {
+        font-size: 24px;
+        color: #ddd;
+        cursor: pointer;
+    }
+    
+    .checked {
+        color: #f8ce0b;
+    }
+    
+    /* CSS for reviews section */
+    .review-box {
+        background-color: $primary_color;
+        padding: 20px;
+        border: 1px solid $primary_color;
+        border-radius: 10px;
+        text-align: left;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: $sixth_color;
+    }
+
+    .review-content p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        color: $sixth_color;
+    }
+
+    .review-rating {
+        color: #ffc107;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .review-photo {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 10px;
+    }
+    //review    
+
+    //about section starts here
+    //about agrirose
+    .tentang-agrirose {
+        display: flex;
+        flex-direction: row;
+        .apa-itu-agrirose {
+            h1 {
+                font-size: 30px;
+                padding: 20px;
+            }
+
+            p {
+                text-indent: 20px;
+                font-size: 16px;
+                padding: 0px 20px;
+                color: $second_color;
+            }
+        }
+
+        .foto-about-agrirose {
+            margin-top: 10%;
+            img {
+                width: 500px;
+                height: 400px;
+                padding: 15px 15px;
+                border-radius: 20px
+            }
+        }
+    }
+    //about agrirose
+
+    //about gunungsari
+    .about-gunung-sari {
+        display: flex;
+        flex-direction: row;
+        margin-left: 3%;
+        .gunung-sari {
+            .box-container {
+                margin: 20px 25px;
+                width: 250px;
+                height: 400px;
+                border-radius: 20px;
+                background-color: $third-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 250px;
+                    height: 150px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    color: $sixth_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    padding: 0px 20px;
+                    color: $sixth_color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    background-color: $sixth_color;
+                    padding: 15px 15px;
+                    width: 150px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 5vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .farmer {
+            .box-container {
+                margin: 20px 2px;
+                width: 250px;
+                height: 400px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 250px;
+                    height: 150px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 150px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 5vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .price {
+            .box-container {
+                margin: 20px 25px;
+                width: 250px;
+                height: 400px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 250px;
+                    height: 150px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 150px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 5vw;
+                    margin-top: 15px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    //about gunungsari
+    //about section ends here
+
+    //social impact section starts here
+    .impact {
+        .impact-image {
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    
+        .impact-content {
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+            .section-title {
+                color: $primary_color;
+            }
+    
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+    
+    
+        .number-container {
+            .number-box {
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+    
+                &:hover {
+                    transform: translateY(-10px);
+                }
+    
+                .number-title {
+                    font-size: 2rem;
+                    color: $primary_color;
+                    margin-bottom: 10px;
+                }
+    
+                .number-heading {
+                    font-size: 1.25rem;
+                    margin-bottom: 10px;
+                }
+    
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    //social impact section ends here
+
+    //product start here
+    
+    
+
+
+
+@media screen and (min-width: 1200px){
+    //nav
+    nav{
+        padding: 20px 70px;
+        .logo{
+            width: 20%;
+            gap: 10px;
+            img{
+                width: 30%;
+            }
+            .name{
+                width: 100%;
+                font-size: 28px;
+            }
+        }
+
+        .nav-links{
+            width: 100%;
+            padding: 0;
+            flex-direction: row;
+            transform: none;
+            z-index: none;
+            transition: none;
+            justify-content: center;
+            position: relative;
+            gap: 50px;
+            font-size: 18px;
+            align-items: center;
+        }
+
+        .burger{
+            display: none;
+        }
+    } 
+    //nav
+
+    //hero
+    .hero {
+        .box-container {
+            background-color: $primary_color;
+            width: 100%;
+            height: 250px;
+            color: $second_color;
+            text-align: center;
+            
+            h1 {
+                padding: 25px;
+            }
+            
+            p {
+                font-size: 20px;
+                padding: 0px 20px;
+                line-height: 25px;
+            }
+        }
+    }
+    //hero
+
+    //about
+    .agrirose {
+        display: flex;
+        .about-agrirose {
+            margin-left: 50px;
+            text-align: justify;
+            padding: 20px 20px;
+            h1 {
+                font-size: 40px;
+                color: $primary_color;
+                padding: 20px;
+            }
+
+            p {
+                font-size: 20px;
+                padding: 14px;
+                color: $fourth-color;
+                width: 400px;
+            }
+
+            .button {
+                border: 2px solid black;
+                border-color: $primary_color;
+                background-color: $second_color;
+                padding: 15px 20px;
+                width: 240px;
+                border-radius: 20px;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-top: 15px;
+
+                //coklat 
+                h4 {
+                    color: $primary_color;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .video-container {
+            flex:1 1 40rem;
+            position: relative;
+            margin: 0px 0px 0px 100px;
+            video{
+                width:100%;
+                border:1.5rem solid #fff;
+                border-radius: .5rem;
+                // box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+                height: 100%;
+                object-fit: cover;
+            }
+        }  
+    }
+
+    .value {
+        .box-container {
+           background-color: #e5b0aa;
+           height: 200px;
+           width: 1400px;
+           .icon-pelayanan-3 {
+            display: flex;
+            flex-direction: row;
+                .premium-flower {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 30px 0px;
+                    img {
+                        margin-top: 20px;
+                        margin-left: 5vw;
+                        width: 100px;
+                        height: 100px;
+                    }
+    
+                    h4 {
+                        position: absolute;
+                        margin-left: 14vw;
+                        margin-top: 20px;
+                    }
+    
+                    p {
+                        position: absolute;
+                        margin-top: 50px;
+                        margin-left: 14vw;
+                        font-size: 15px;
+                        text-align: justify;
+                        color: $second_color;
+                        width: 200px;
+                    }
+                }
+    
+                .instan-order {
+                    padding: 40px 0px;
+                    display: flex;
+                    flex-direction: row;
+                    img {
+                        margin-left: 20vw;
+                        width: 120px;
+                        height: 120px;
+                    }
+    
+                    h4 {
+                        margin-left: 20px;
+                        margin-top: 20px;
+                    }
+    
+                    p {
+                        position: absolute;
+                        margin-top: 50px;
+                        margin-left: 30vw;
+                        font-size: 15px;
+                        text-align: justify;
+                        color: $second_color;
+                        width: 250px;
+                    }
+                }
+    
+                .pengiriman {
+                    padding: 50px 0px;
+                    display: flex;
+                    flex-direction: row;
+                    img {
+                        margin-left: 5vw;
+                        width: 120px;
+                        margin-top: 20px;
+                    }
+    
+                    h4 {
+                        position: absolute;
+                        margin-left: 15vw;
+                        width: 300px;
+                        text-align: left;
+                    }
+    
+                    p {
+                        position: absolute;
+                        margin-top: 50px;
+                        margin-left: 15vw;
+                        font-size: 15px;
+                        color: $second_color;
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+    //about
+
+    //activity 
+    .activity {
+        .pelayanan {
+            .box-container {
+                background-color:#F2EAD3;
+                width: 1440px;
+                height: 400px;
+                h1 {
+                    padding: 20px 20px;
+                    text-align: center;
+                    font-size: 35px;
+                    color: $primary-color;
+                }
+
+                .icon-pelayanan-1 {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 10%;
+                    .konsultasi {
+                        padding: 0% 0%;
+                        img {
+                            width: 150px;
+                            margin-left: 35px;
+                        }
+
+                        h4 {
+                            font-size: 25px;
+                            color: $primary-color;
+                            text-align: center;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 210px;
+                        }
+                    }
+
+                    .bunga-potong {
+                        padding: 0% 7%;
+                        img {
+                            width: 150px;
+                            margin-left: 35px;
+                        }
+
+                        h4 {
+                            font-size: 25px;
+                            color: $primary-color;
+                            text-align: center;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 200px;
+                        }
+                    }
+                }
+
+                .icon-pelayanan-2 {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 0%;
+                    margin-top: 10%;
+                    .rangkaian-bunga {
+                        padding: 0px 20px;
+                        img {
+                            width: 150px;
+                            margin-left: 35px;
+                        }
+    
+                        h4 {
+                            font-size: 25px;
+                            color: $primary-color;
+                            text-align: center;
+                        }
+    
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 200px;
+                        }
+                    }
+    
+                    .distribusi {
+                        padding: 0% 0%;
+                        img {
+                            width: 150px;
+                            margin-left: 35px;
+                        }
+    
+                        h4 {
+                            font-size: 25px;
+                            color: $primary-color;
+                            text-align: center;
+                        }
+    
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                            color: $primary-color;
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .kegiatan {
+            h1 {
+                margin-top: 40px;
+                text-align: center;
+                font-size: 40px;
+                color: $primary_color;
+                padding:20px;
+            }
+
+            p {
+                text-align: justify;
+                font-size: 20px;
+                margin-top: 150px;
+            }
+
+            .container {
+                margin-top: 50px;
+                width: 800px;
+                height: 900px;
+                display: flex;
+                flex-direction: row;
+                padding: 0 20px;
+            }
+            
+            .slide {
+                height: 60vh;
+                width: 300px;
+                border-radius: 20px;
+                margin: 10px;
+                cursor: pointer;
+                color: #fff;
+                flex: 1;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                transition: all 0.7s ease-in-out;
+                // filter: blur(4px);
+            }
+            
+            .slide h3 {
+                position: absolute;
+                font-size: clamp(1rem, 5vw, 5rem);
+                bottom: 20px;
+                left: 20px;
+                margin: 0;
+                opacity: 0;
+                background-color: #e3fdf5;
+                background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .slide.active {
+                flex: 10;
+                // filter: blur(0px);
+            }
+        }
+    }
+    //activity
+
+    //social impact 
+    .social-impact {
+        .permasalahan {
+            display: flex;
+            flex-direction: column-reverse;
+            
+            img {
+            width: 60%; 
+            margin-top: -25vw;
+            margin-left: 50px;
+            padding: 20px;
+            border-radius: 30px;
+            }
+
+            .box-container {
+                text-align: center;
+                background-color: $primary_color;
+                margin-top: -35vw;
+                margin-left: 45vw;
+                padding: 20px 20px;
+                width: 50%;
+                height: 400px;
+
+                h1 {
+                    padding: 50px 20px;
+                    color:#DADDB1;
+                    font-size: 30px;
+                }
+
+                p {
+                    padding: 10px;
+                    color: $third-color;
+                }
+
+                button {
+                    margin-top: 20px;
+                    padding: 15px;
+                    border-radius: 15px;
+                    background-color: transparent;
+                    color: #DADDB1;
+                    font-weight: 700;
+                    border-color: #DADDB1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    //social impact
+
+     //product
+     .product {
+        background-color: #F2EAD3;
+        height: 700px;
+        margin-top:150px;
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            padding: 7vw 0vw;
+            h1 {
+                color: $primary-color;
+                font-weight: 700;
+                font-size: 40px;
+                margin-left: 10vw;
+            }
+
+            a {
+                font-size: 14px;
+                color: #F2EAD3;
+                background-color: $primary-color;
+                padding: 15px 10px;
+                border-radius: 10px;
+                margin-left: 50%;
+            }
+        }
+
+        p {
+            font-size: 25px;
+            color: $fourth-color;
+            margin-left: 10vw;
+            margin-top: -5vw;
+        }
+
+        .wrapper{
+            display: flex;
+            margin-left: 150px;
+            margin-top: 50px;
+            max-width: 80%;
+            position: relative;
+        }
+        .wrapper i{
+            left: 1130px;
+            top: 50%;
+            height: 44px;
+            width: 44px;
+            color: $primary-color;
+            cursor: pointer;
+            font-size: 1.15rem;
+            position: absolute;
+            text-align: center;
+            line-height: 44px;
+            background: $second-color;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+        }
+        
+        .wrapper i:active{
+            transform: translateY(-50%) scale(0.9);
+        }
+        
+        .wrapper i:hover{
+            background: $primary-color;
+        }
+        
+        .wrapper i:first-child{
+            left: -22px;
+            display: none;
+        }
+        
+        .wrapper i:last-child{
+            right: -22px;
+        }
+        
+        .wrapper .carousel{
+            font-size: 0px;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+        }
+        
+        .carousel.dragging{
+            cursor: grab;
+            scroll-behavior: auto;
+        }
+        
+        .carousel.dragging img{
+            pointer-events: none;
+        }
+        
+        .carousel img{
+            height: 340px;
+            object-fit: cover;
+            user-select: none;
+            margin-left: 14px;
+            width: calc(100% / 3);
+        }
+        
+        .carousel img:first-child{
+            margin-left: 0px;
+        }
+    }
+    //product
+
+    //about section starts here
+    //about agrirose
+    .tentang-agrirose {
+        display: flex;
+        flex-direction: row;
+        .apa-itu-agrirose {
+            h1 {
+                font-size: 40px;
+                padding: 30px;
+            }
+
+            p {
+                text-indent: 20px;
+                font-size: 20px;
+                padding: 0px 20px;
+                color: $fourth-color;
+            }
+        }
+
+        .foto-about-agrirose {
+            margin-top: 4%;
+            img {
+                width: 800px;
+                height: 500px;
+                padding: 15px 15px;
+                border-radius: 20px
+            }
+        }
+    }
+    //about agrirose
+
+    //about gunungsari
+    .about-gunung-sari {
+        display: flex;
+        flex-direction: row;
+        margin-left: 3%;
+        .gunung-sari {
+            .box-container {
+                margin: 20px 25px;
+                width: 400px;
+                height: 520px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 400px;
+                    height: 250px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 23px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 17px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 7vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        .farmer {
+            .box-container {
+                margin: 20px 25px;
+                width: 400px;
+                height: 520px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 400px;
+                    height: 250px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 23px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 17px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 7vw;
+                    margin-top: 50px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        .price {
+            .box-container {
+                margin: 20px 25px;
+                width: 400px;
+                height: 520px;
+                border-radius: 20px;
+                background-color: $second-color;
+                box-shadow: 0px 10px 25px rgba(78, 43, 43, 0.15);
+
+                img {
+                    width: 400px;
+                    height: 250px;
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                }
+
+                h1 {
+                    font-size: 23px;
+                    color: $primary_color;
+                    padding: 20px;
+                }
+
+                p {
+                    font-size: 17px;
+                    padding: 0px 20px;
+                    color: $fourth-color;
+                    text-align: justify;
+                }
+
+                .button {
+                    border: 2px solid black;
+                    border-color: $primary_color;
+                    background-color: $second_color;
+                    padding: 15px 15px;
+                    width: 180px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    margin-left: 7vw;
+                    margin-top: 30px;
+                    //coklat 
+                    h4 {
+                        color: $primary_color;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    //about gunungsari
+    //about section ends here
+
+
+    //social impact section starts here
+    .impact {
+        .apa-yang-terjadi {
+            img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .box-container {
+                background-color: $primary-color;
+                margin-top: -30vw;
+                margin-left: 25vw;
+                text-align: center;
+                width: 50%;
+                height: 300px;
+                border-radius: 15px;
+                position: absolute;
+
+                h1 {
+                    padding: 15px 0px;
+                    color: $second-color;
+                    font-size: 35px;
+                }
+
+                p {
+                    padding: 20px 30px;
+                    color: $second-color;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .pemberdayaan {
+            .box-container {
+                position: absolute;
+                background-color: $fourth-color;
+                width: 100%;
+                height: 300px;
+                margin-top: -5vw;
+
+                h1 {
+                    text-align: center;
+                    padding: 30px;
+                    color: $second-color;
+                    font-size: 30px;
+                }
+
+                p {
+                    padding: 15px 90px;
+                    color: $third-color;
+                    text-align: center;
+                }
+            }
+        }
+
+        .mengapa-agrirose {
+            margin-top: 300px;
+            h1 {
+                font-size: 30px;
+                margin: 20px 20px;
+            }
+
+            p {
+                font-size: 15px;
+                margin: 0px 20px;
+                text-decoration: justify;
+            }
+
+            .number {
+                display: flex;
+                .number-1-2 {
+                    .number-1-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .satu {
+                            font-size: 30px;
+                        }
+
+                        .pendapatan-petani {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    p {
+                        text-align: justify;
+                        margin: 0px 70px;
+                    }
+
+                    .number-2-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .dua {
+                            font-size: 30px;
+                        }
+
+                        .diversifikasi {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+
+                .number-3-4 {
+                    .number-3-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .tiga {
+                            font-size: 30px;
+                        }
+
+                        .inovasi-teknologi {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    p {
+                        text-align: justify;
+                        margin: 0px 70px;
+                    }
+
+                    .number-4-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .empat {
+                            font-size: 30px;
+                        }
+
+                        .pendapatan-pelatihan {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .number-5-6 {
+                    .number-5-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .lima {
+                            font-size: 30px;
+                        }
+
+                        .ekspor-potensial {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    p {
+                        text-align: justify;
+                        margin: 0px 70px;
+                    }
+
+                    .number-6-h1 {
+                        display: flex;
+                        flex-direction: row;
+                        .enam {
+                            font-size: 30px;
+                        }
+
+                        .peningkatan-kualitas {
+                            margin-top: 25px;
+                            margin-left: 0px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            img {
+                width: 95%;
+                height: 800px;
+                margin: 20px 20px;
+            }
+        }
+    }
+    //social impact section ends here
+
+    }
+}
